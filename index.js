@@ -15,7 +15,8 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const jest = require("jest");
-const generateSVG = require("generateSVG");
+const generateSVG = require("./assets/generateSVG");
+const shapes = require("./assets/shapes");
 
 //Application questions for SVG creation
 
