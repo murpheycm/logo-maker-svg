@@ -10,3 +10,45 @@
 // expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
 // 
 // You may need to add additional files in the lib folder for handling user input, writing to a file, etc. Writing tests for these additional files is optional.
+
+//Packages needed for application
+const fs = require("fs");
+const inquirer = require("inquirer");
+const jest = require("jest");
+const generateSVG = require("generateSVG");
+const { default: Choices } = require("inquirer/lib/objects/choices");
+
+//Application questions for SVG creation
+
+const questions = [
+    {
+        type: "select",
+        name: "shape",
+        message: "What shape would you like for your logo?",
+        choices: ["square", "circle", "triangle"],
+    },
+    {
+        type: "select",
+        name: "colorShape",
+        message: "What color would you like the logo shape to be?",
+        choices: ["red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "black", "white", "gray"],
+    },
+    {
+        type: "select",
+        name: "colorText",
+        message: "What color would you like the logo text to be?",
+        choices: ["red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "black", "white", "gray"],
+    },
+    {
+        type: "input",
+        name: "logoText",
+        message: "Please enter up to three letters for your logo:",
+        validate: function (input) {
+            if (input.length > 3) {
+                            return console.log("Please provide three or less characters:");
+                        } else {
+                            return true;
+                        }
+        }
+    }
+];
