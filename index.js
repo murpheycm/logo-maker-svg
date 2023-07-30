@@ -3,7 +3,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const jest = require("jest");
-const generateSVG = require("./assets/generateSVG.js");
 const { Triangle, Square, Circle } = require("./assets/shapes.js");
 
 //Application questions for SVG creation
