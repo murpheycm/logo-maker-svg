@@ -52,3 +52,25 @@ const questions = [
         }
     }
 ];
+
+//Function to write the SVG file
+
+function writeToFile(fileName, data) {
+    fs.writeFile('logo.svg', data, function (err) {
+        if (err) {
+            return console.log(err);
+        } else {
+            console.log("Your SVG file has been created!");
+        }
+    });
+};
+
+//Function to initialize the application
+
+function init() {
+    inquirer.prompt(questions).then(function (data) {        
+        writeToFile("logo.svg", generateSVG(data));
+    });
+};
+
+init();
