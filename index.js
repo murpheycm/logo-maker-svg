@@ -16,7 +16,6 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const jest = require("jest");
 const generateSVG = require("generateSVG");
-const { default: Choices } = require("inquirer/lib/objects/choices");
 
 //Application questions for SVG creation
 
