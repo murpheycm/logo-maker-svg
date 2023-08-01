@@ -25,16 +25,20 @@ A Node.js command-line application that takes in user input to generate a logo a
 ## Usage
 The application prompts the user to select a color and shape, provide text for the logo, and save the generated SVG to a SVG file.
 
-<!-- VIDEO SUBMISSION -->
+![alt text](./assets/repovideo.gif)
 
 ## Installation
+1. Clone the SVG Logo Maker github repository
+2. CLI: Install node.js
+3. CLI: npm init -y
+4. CLI: npm i inquirer@8.2.4
+5. CLI: node index.js
 
-## Credits
 
 ## Tests
+There is one test suite associated with three separate tests for shape, shape color, and text color for all three shapes.
 
-## License
+1. Open CLI terminal
+2. CLI: npm run test
 
-## Creator
-This app was created by ${author}.
 

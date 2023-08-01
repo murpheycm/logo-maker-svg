@@ -1,6 +1,5 @@
 #  Indicates which folders and files Git should ignore
 
 node_modules
-LICENSE
 package-lock.json
 
