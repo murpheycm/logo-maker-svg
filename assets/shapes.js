@@ -9,6 +9,18 @@ class Shape {
       this.shapeColor = color;
     }
   }
+
+  class TextColor {
+    constructor() {
+      this.textColor = "";
+    }
+    setColor(color) {
+      this.textColor = color;
+    }
+    render() {
+      return `<text x="150" y="115" fill="${this.textColor}" font-size="30" font-family="Arial">Test</text>`;
+    }
+  }
   
   // Triangle, Square, and Circle classes inherits Shape class
   class Triangle extends Shape {
@@ -30,4 +42,4 @@ class Shape {
   }
   
   // Exports Square, Triangle, and Circle classes to index.js
-  module.exports = {Triangle, Square, Circle};
+  module.exports = {Triangle, Square, Circle, TextColor};

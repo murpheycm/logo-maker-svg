@@ -1,9 +1,9 @@
 //Packages needed for application
-
 const fs = require("fs");
 const inquirer = require("inquirer");
 const jest = require("jest");
 const { Triangle, Square, Circle } = require("./assets/shapes.js");
+
 
 //Application questions for SVG creation
 const questions = [
@@ -14,16 +14,14 @@ const questions = [
         choices: ["Square", "Circle", "Triangle"],
     },
     {
-        type: "list",
+        type: "input",
         name: "shapeColor",
         message: "What color would you like the logo shape to be?",
-        choices: ["Red", "Blue", "Green", "Yellow", "Orange", "Purple", "Pink", "Brown", "Black", "White", "Gray"],
     },
     {
-        type: "list",
+        type: "input",
         name: "textColor",
         message: "What color would you like the logo text to be?",
-        choices: ["Red", "Blue", "Green", "Yellow", "Orange", "Purple", "Pink", "Brown", "Black", "White", "Gray"],
     },
     {
         type: "input",
@@ -54,9 +52,8 @@ function writeToFile(fileName, data) {
  
      
      //User input --> logo shape
-     // let shapeChoice;
      if (shape === "Triangle") {
-         // shapeChoice = new Triangle();
+         shapeChoice = new Triangle();
          svgHTML += `<polygon points="150, 18 244, 182 56, 182" fill="${shapeColor}"/>`;
      }
      if (data.shape === "Square") {
@@ -85,7 +82,6 @@ function writeToFile(fileName, data) {
 };
 
 //Function to initialize the application
-
 function init() {
     inquirer.prompt(questions).then(function (data) {        
         console.log("Hit init function!");
@@ -95,5 +91,5 @@ function init() {
 };
 
 
-
+//Initialization of app upon CLI call
 init();
